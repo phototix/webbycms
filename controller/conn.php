@@ -53,16 +53,4 @@ if($useDataTable=="yes"){
 
 /* Set your application timezone. */
 date_default_timezone_set('Asia/Singapore');
-
-/* Error Message Delivery Function (Use Session) */
-if($systemSucces<>""){
-	if(isset($_SESSION["systemSucces"])){
-		$_SESSION["systemSucces"]=$systemSucces;	
-	}
-}
-if($systemError<>""){
-	if(isset($_SESSION["systemError"])){
-		$_SESSION["systemError"]=$systemError;	
-	}
-}
 ?>
