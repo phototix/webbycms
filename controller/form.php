@@ -11,4 +11,16 @@ if($form<>""){
 if($newInsertID<>""){
 	?><script>window.location="<?=$currentURl?>";</script><?
 }
+
+/* Error Message Delivery Function (Use Session) */
+if($systemSucces<>""){
+	if(isset($_SESSION["systemSucces"])){
+		$_SESSION["systemSucces"]=$systemSucces;	
+	}
+}
+if($systemError<>""){
+	if(isset($_SESSION["systemError"])){
+		$_SESSION["systemError"]=$systemError;	
+	}
+}
 ?>
