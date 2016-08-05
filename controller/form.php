@@ -1,8 +1,19 @@
 <?php
 $newInsertID="";$currentURl="http://".$_SERVER["HTTP_HOST"]."".$_SERVER["REQUEST_URI"];
+
+/* Ajax Form Handler */
 $formset="";
 if(isset($_GET["formset"])&&!empty($_GET["formset"])){
 	$formset=$_GET["formset"];
+}
+$showLoading="";
+if(isset($_GET["showLoading"])&&!empty($_GET["showLoading"])){
+	$showLoading=$_GET["showLoading"];
+}
+/* Define URL after form submited (For AJAX Purpose only) */
+$redirectURL="";
+if(isset($_GET["redirectURL"])&&!empty($_GET["redirectURL"])){
+	$redirectURL=$_GET["redirectURL"];
 }
 
 if($formset=="ajax"){
@@ -29,7 +40,14 @@ if($formset=="ajax"){
 					$_SESSION["systemError"]=$systemError;	
 				}
 			}
-			
+
+			if($showLoading==""){
+				?><h1>Loading...</h1><?
+				if($redirectURL<>""){
+					?><script>window.location="<?=$redirectURL?>";</script><?
+				}
+			}
+
 		}else{
 			?><script>window.location="?<?=$form?>&<?=$formset?>";</script><?
 		}
