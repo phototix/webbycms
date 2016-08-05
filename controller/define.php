@@ -1,0 +1,37 @@
+<?php
+$row="";
+$systemError="";$systemSucces="";
+if(empty($_SESSION["systemError"])){
+	$_SESSION["systemError"]="";
+}
+if(empty($_SESSION["systemSucces"])){
+	$_SESSION["systemSucces"]="";
+}
+$page="";
+if(isset($_GET["page"])&&!empty($_GET["page"])){
+	$page=$_GET["page"];
+}
+if($page==""){
+	$page="home";
+}
+$cate="";
+if(isset($_GET["cate"])&&!empty($_GET["cate"])){
+	$cate=$_GET["cate"];
+}
+$action="";
+if(isset($_GET["action"])&&!empty($_GET["action"])){
+	$action=$_GET["action"];
+}
+$id="";
+if(isset($_GET["id"])&&!empty($_GET["id"])){
+	$id=$_GET["id"];
+}
+$form="";
+if(isset($_POST["form"])&&!empty($_POST["form"])){
+	$form=$_POST["form"];
+}
+$token="";
+if(isset($_POST["token"])&&!empty($_POST["token"])){
+	$token=$_POST["token"];
+}
+?>

@@ -1,0 +1,12 @@
+<?php
+if($cate==""){ 
+    include("404.php"); 
+}else{
+	$pageFileSystem="pages/error/".$cate.".php";
+	if(file_exists($pageFileSystem)){
+		include($pageFileSystem);
+	}else{
+		include('404.php');
+	}
+}
+?>
