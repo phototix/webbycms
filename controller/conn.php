@@ -20,6 +20,7 @@ $conn_mysql_username_dev="root";
 $conn_mysql_password_dev="1234";
 $conn_mysql_database_dev="";
 
+/* Here you can put your Localhost/Development Enviroment endpoint, so can be isolated from live database. */
 $localhost_dev="";
 
 $useLocalMySql="yes";$useDataTable="no";
