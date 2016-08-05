@@ -5,3 +5,10 @@ Currently Tracking to help startups to build fast online platform, and supply a 
 Ease the worries of startups for building scabable and stable service platform.
 
 Developer Skill: PHP, mySQL Improved, HTML and CSS Bootstrap, Javascripts
+
+Clone and start build
+Recommened Tools:
+- SourceTree
+- Sublime Text 3
+- MAMP Pro for local development
+- SequelPro (Mac OS), MYSQL WorkBench (Windows)
