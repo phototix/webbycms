@@ -1,7 +1,7 @@
 <?php
 $newInsertID="";$currentURl="http://".$_SERVER["HTTP_HOST"]."".$_SERVER["REQUEST_URI"];
 if($form<>""){
-	$systemForm="common/forms/".$form.".php";
+	$systemForm="controller/forms/".$form.".php";
 	if(file_exists($systemForm)){
 		include($systemForm);
 	}else{
