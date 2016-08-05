@@ -10,7 +10,11 @@ $showLoading="";
 if(isset($_GET["showLoading"])&&!empty($_GET["showLoading"])){
 	$showLoading=$_GET["showLoading"];
 }
-/* Define URL after form submited (For AJAX Purpose only) */
+/* 
+Define URL after form submited (For AJAX Purpose only) 
+Set $redirectURL='noredirect' to disable redirection after AJAX Submmit.
+Make sure to set your XMLHttpRequest body if redirect is needed.
+*/
 $redirectURL="";
 if(isset($_GET["redirectURL"])&&!empty($_GET["redirectURL"])){
 	$redirectURL=$_GET["redirectURL"];
@@ -43,8 +47,11 @@ if($formset=="ajax"){
 
 			if($showLoading==""){
 				?><h1>Loading...</h1><?
-				if($redirectURL<>""){
+				if($redirectURL==""||$redirectURL<>""){
+					if($redirectURL==""){ $redirectURL="/"; }
 					?><script>window.location="<?=$redirectURL?>";</script><?
+				}elseif($redirectURL=="noredirect"){
+
 				}
 			}
 
