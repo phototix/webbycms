@@ -1,17 +1,34 @@
 <?php
 $newInsertID="";$currentURl="http://".$_SERVER["HTTP_HOST"]."".$_SERVER["REQUEST_URI"];
+$formset="";
+if(isset($_GET["formset"])&&!empty($_GET["formset"])){
+	$formset=$_GET["formset"];
+}
+
 if($form<>""){
-	$systemForm="controller/forms/".$form.".php";
-	if(file_exists($systemForm)){
-		include($systemForm);
+	if($formset=="ajax"){
+		require("conn.php");
+		require("functions.php");
+		require("common.php");
+		$systemForm="controller/forms/".$form.".php";
+		if(file_exists($systemForm)){
+			include($systemForm);
+		}else{
+			?><script>window.location="?<?=$form?>";</script><?
+		}
 	}else{
-		?><script>window.location="?<?=$form?>";</script><?
+		$systemForm="controller/forms/".$form.".php";
+		if(file_exists($systemForm)){
+			include($systemForm);
+		}else{
+			?><script>window.location="?<?=$form?>";</script><?
+		}
 	}
 }
+
 if($newInsertID<>""){
 	?><script>window.location="<?=$currentURl?>";</script><?
 }
-
 /* Error Message Delivery Function (Use Session) */
 if($systemSucces<>""){
 	if(isset($_SESSION["systemSucces"])){
