@@ -6,6 +6,7 @@ if(isset($_GET["formset"])&&!empty($_GET["formset"])){
 }
 
 if($formset=="ajax"){
+	session_start();
 	require("conn.php");
 	require("functions.php");
 	require("common.php");
