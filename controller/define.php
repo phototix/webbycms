@@ -34,4 +34,16 @@ $token="";
 if(isset($_POST["token"])&&!empty($_POST["token"])){
 	$token=$_POST["token"];
 }
+
+/* Pre Defined Variables for Date & Time - This will used for Token generation */
+$Today=date("Y-m-d");
+$Day=date("d");
+$Month=date("m");
+$Year=date("Y");
+$Hour=date("g");
+$Minute=date("i");
+$Seconds=date("s");
+$Time=date("g:i A");
+
+$Token=md5($Today."webbycms".uniqid().$Time);
 ?>
