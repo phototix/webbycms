@@ -13,4 +13,5 @@ Version: 1.0
 
 <?php require_once("includes/htmlstart.php"); ?>
 <?php require_once("includes/views.php"); ?>
+<?php require_once("includes/javascripts.php"); ?>
 <?php require_once("includes/htmlend.php"); ?>

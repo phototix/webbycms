@@ -1,6 +1,6 @@
 <?php
 /*
-TItle: Database Connection Handler
+TItle: Database & Global Connection Handler
 Authoer: Brandon Chong
 Version: 3.0
 Description: This conn.php file contains not just mysql database connections, 
