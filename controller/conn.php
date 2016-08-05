@@ -23,6 +23,9 @@ $conn_mysql_database_dev="";
 /* Here you can put your Localhost/Development Enviroment endpoint, so can be isolated from live database. */
 $localhost_dev="";
 
+/* Include PHP Variables and defines. */
+require("define.php");
+
 /* 
 Define to use localhost development database and is the web application use any database 
 Put 'yes' to enable, 'no' to disable.
@@ -62,6 +65,4 @@ if($systemError<>""){
 		$_SESSION["systemError"]=$systemError;	
 	}
 }
-
-require("define.php");
 ?>
