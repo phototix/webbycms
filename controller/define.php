@@ -1,5 +1,5 @@
 <?php
-$row="";
+$row="";$webTitle="WebbyCMS";
 $systemError="";$systemSucces="";
 if(empty($_SESSION["systemError"])){
 	$_SESSION["systemError"]="";
