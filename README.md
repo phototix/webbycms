@@ -13,3 +13,7 @@ Recommened Tools:
 - Sublime Text 3
 - MAMP Pro for local development
 - SequelPro (Mac OS), MYSQL WorkBench (Windows)
+
+#Others
+Foundation v6
+https://github.com/phototix/webbycms/tree/Foundations6/
