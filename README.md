@@ -9,7 +9,7 @@ Clone/Download from the Github and start develop your PHP project.
 This master copy only contains the PHP framework. If you needed the framework to work on others frontend HTML framework check the links below.
 
 1) Bootstraps v4
-https://github.com/phototix/webbycms/edit/Bootstrap4/
+https://github.com/phototix/webbycms/tree/Bootstrap4/
 
 2) Foundations 6
 https://github.com/phototix/webbycms/tree/Foundations6/
