@@ -1,0 +1,25 @@
+RewriteEngine on
+ErrorDocument 404 /index.php?page=error&cate=404
+ErrorDocument 500 /index.php?page=error&cate=500
+
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule .* http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^/?([^/.]+)$ /index.php?page=$1 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)$ /index.php?page=$1&cate=$2 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)$ /index.php?page=$1&cate=$2&action=$3 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)$ /index.php?page=$1&cate=$2&action=$3&id=$4 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)$ /index.php?page=$1&cate=$2&action=$3&id=$4&sub=$5 [NC,L]
+
+RewriteRule ^/?([^/.]+)/$ /index.php?page=$1 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/$ /index.php?page=$1&cate=$2 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/$ /index.php?page=$1&cate=$2&action=$3 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/$ /index.php?page=$1&cate=$2&action=$3&id=$4 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/$ /index.php?page=$1&cate=$2&action=$3&id=$4&sub=$5 [NC,L]
+
+RewriteRule ^/?([^/.]+)\.html$ /index.php?page=$1 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)\.html$ /index.php?page=$1&cate=$2 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)\.html$ /index.php?page=$1&cate=$2&action=$3 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)\.html$ /index.php?page=$1&cate=$2&action=$3&id=$4 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)\.html$ /index.php?page=$1&cate=$2&action=$3&id=$4&sub=$5 [NC,L]
+RewriteRule ^/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)/?([^/.]+)\.html$ /index.php?page=$1&cate=$2&action=$3&id=$4&sub=$5&subsub=$6 [NC,L]
