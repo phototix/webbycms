@@ -6,13 +6,8 @@ Its works fine for all others front-end framework such as #Bootstraps, Foundatio
 Clone/Download from the Github and start develop your PHP project.
 
 #Master
-This master copy only contains the PHP framework. If you needed the framework to work on others frontend HTML framework check the links below.
-
-1) Bootstraps v4
-https://github.com/phototix/webbycms/tree/Bootstrap4/
-
-2) Foundations 6
-https://github.com/phototix/webbycms/tree/Foundations6/
+This master copy only contains the PHP framework.
+I've plan to remove the Foundations & Bootstrap branch and make it to a new GIT.
 
 WebbyCMS is a standalone framework that capable to implement for any PHP project. WebbyCMS breaks to two parts. Front-end and Back-end.
 Front-end framework temporary called WebbyFrame(c). Back-end framework is currently close sourced. Still in consideration for open sources. Will try to provide a full documentation when I have the time.
