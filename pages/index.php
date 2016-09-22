@@ -13,20 +13,14 @@ if($systemDemo=="yes"){
 		if($page<>""&&$page<>'index'){
 			$pageFileSystem="pages/".$page.'/index.php';
 			if(file_exists($pageFileSystem)){
-
-				include("pages/includes/layout/bodystart.php");
 				include($pageFileSystem);
-				include("pages/includes/layout/bodyend.php");
-
 			}else{
 				include('pages/error/404.php');
 			}
 		}else{
 			$pageFileSystem='pages/home/index.php';
 			if(file_exists($pageFileSystem)){
-				include("pages/includes/layout/bodystart.php");
 				include($pageFileSystem);
-				include("pages/includes/layout/bodyend.php");
 			}else{
 				include('pages/error/404.php');
 			}
@@ -37,18 +31,14 @@ if($systemDemo=="yes"){
 			if($page<>""&&$page<>'index'){
 				$pageFileSystem="pages/".$page.'/index.php';
 				if(file_exists($pageFileSystem)){
-					include("pages/includes/layout/bodystart.php");
 					include($pageFileSystem);
-					include("pages/includes/layout/bodyend.php");
 				}else{
 					include('pages/error/404.php');
 				}
 			}else{
 				$pageFileSystem='pages/home/index.php';
 				if(file_exists($pageFileSystem)){
-					include("pages/includes/layout/bodystart.php");
 					include($pageFileSystem);
-					include("pages/includes/layout/bodyend.php");
 				}else{
 					include('pages/error/404.php');
 				}
@@ -70,9 +60,7 @@ if($systemDemo=="yes"){
 
 		$pageFileSystem="pages/".$page.'/index.php';
 		if(file_exists($pageFileSystem)){
-			include("pages/includes/layout/bodystart.php");
 			include($pageFileSystem);
-			include("pages/includes/layout/bodyend.php");
 		}else{
 			include('pages/error/404.php');
 		}
@@ -81,9 +69,7 @@ if($systemDemo=="yes"){
 		
 		$pageFileSystem='pages/home/index.php';
 		if(file_exists($pageFileSystem)){
-			include("pages/includes/layout/bodystart.php");
 			include($pageFileSystem);
-			include("pages/includes/layout/bodyend.php");
 		}else{
 			include('pages/error/404.php');
 		}
