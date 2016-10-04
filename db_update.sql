@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.5.42)
 # Database: vlken_db
-# Generation Time: 2016-09-22 08:41:25 +0000
+# Generation Time: 2016-10-04 00:34:46 +0000
 # ************************************************************
 
 
@@ -65,7 +65,7 @@ LOCK TABLES `db_admin` WRITE;
 INSERT INTO `db_admin` (`admin_id`, `admin_name`, `website_title`, `nav_options`, `web_launch`, `admin_email`, `admin_password`, `admin_stat`, `admin_unique`, `admin_log_date`, `admin_log_time`, `admin_log_count`, `system_error`, `front_email`, `front_phone`, `front_google_map_embed`, `front_bhour_mon`, `front_bhour_tue`, `front_bhour_wed`, `front_bhour_thu`, `front_bhour_fri`, `front_bhour_sat`, `front_bhour_sun`, `founder_name`, `founder_tag`, `founder_desc`, `founder_cover`, `admin_post`, `meta_placeNAME`, `header_body_addon`)
 VALUES
 	(1,'Admin Name','WebbyCMS',1,1,'admin@domain.com','be4e5ec43257c4e574c9b956a49f91b0','','5649fe9cc98a66.61720547','2016-09-20','2:01 AM',0,'','','','','','','','','','','','','','','','admin','',''),
-	(2,'Notions','WebbyCMS',1,0,'superadmin','7e953d47c2851bca09158ac6d7fb2ec6','','5621fe81c98a66.61830547','2016-09-14','3:51 PM',0,'','','','','','','','','','','','','','','','superadmin','','');
+	(2,'Notions','WebbyCMS',1,0,'superadmin','7e953d47c2851bca09158ac6d7fb2ec6','','5621fe81c98a66.61830547','2016-09-22','4:49 PM',1,'','','','','','','','','','','','','','','','superadmin','','');
 
 /*!40000 ALTER TABLE `db_admin` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -199,6 +199,7 @@ CREATE TABLE `db_gallery` (
   `image_stat` varchar(1) NOT NULL,
   `page_slug` varchar(120) NOT NULL,
   `blog_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `image_display` int(11) NOT NULL,
   `image_sort` int(11) NOT NULL,
   `image_link` text NOT NULL,
@@ -266,6 +267,132 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table db_products
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `db_products`;
+
+CREATE TABLE `db_products` (
+  `product_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `product_name` text NOT NULL,
+  `product_slug` varchar(60) NOT NULL,
+  `product_stat` varchar(1) NOT NULL,
+  `product_contents` blob NOT NULL,
+  `product_specs` blob NOT NULL,
+  `product_tags` text NOT NULL,
+  `product_sort` int(11) NOT NULL,
+  `product_cover` text NOT NULL,
+  `product_display` int(11) NOT NULL,
+  `product_SKU` varchar(60) NOT NULL,
+  `product_EAN` varchar(120) NOT NULL,
+  `product_token` text NOT NULL,
+  `cate_id` int(11) NOT NULL,
+  `sub_id` int(11) NOT NULL,
+  `sub_sub_id` int(11) NOT NULL,
+  `sub_sub_sub_id` int(11) NOT NULL,
+  `product_price` decimal(19,2) NOT NULL,
+  `product_currency` varchar(3) NOT NULL,
+  `product_offer_price` decimal(19,2) NOT NULL,
+  `product_offer_rate` decimal(19,2) NOT NULL,
+  `product_stocks` int(11) NOT NULL,
+  `product_date` date NOT NULL,
+  `product_time` varchar(20) NOT NULL DEFAULT '',
+  `product_pdate` date NOT NULL,
+  `product_ptime` varchar(20) NOT NULL DEFAULT '',
+  `product_mdate` date NOT NULL,
+  `product_mtime` varchar(20) NOT NULL,
+  `product_vdate` date NOT NULL,
+  `product_vtime` varchar(20) NOT NULL,
+  `product_rate` decimal(2,2) NOT NULL,
+  `product_rate_date` date NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table db_products_cate
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `db_products_cate`;
+
+CREATE TABLE `db_products_cate` (
+  `cate_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `cate_name` text NOT NULL,
+  `cate_slug` varchar(60) NOT NULL,
+  `cate_stat` varchar(1) NOT NULL,
+  `cate_contents` blob NOT NULL,
+  `cate_cover` text NOT NULL,
+  `cate_sort` int(11) NOT NULL,
+  `cate_display` int(11) NOT NULL,
+  PRIMARY KEY (`cate_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table db_products_cate_sub
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `db_products_cate_sub`;
+
+CREATE TABLE `db_products_cate_sub` (
+  `sub_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `cate_id` int(11) NOT NULL,
+  `cate_name` text NOT NULL,
+  `cate_slug` varchar(60) NOT NULL DEFAULT '',
+  `cate_stat` varchar(1) NOT NULL DEFAULT '',
+  `cate_contents` blob NOT NULL,
+  `cate_cover` text NOT NULL,
+  `cate_sort` int(11) NOT NULL,
+  `cate_display` int(11) NOT NULL,
+  PRIMARY KEY (`sub_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table db_products_cate_sub_sub
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `db_products_cate_sub_sub`;
+
+CREATE TABLE `db_products_cate_sub_sub` (
+  `sub_sub_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `cate_id` int(11) NOT NULL,
+  `sub_id` int(11) NOT NULL,
+  `cate_name` text NOT NULL,
+  `cate_slug` varchar(60) NOT NULL DEFAULT '',
+  `cate_stat` varchar(1) NOT NULL DEFAULT '',
+  `cate_contents` blob NOT NULL,
+  `cate_cover` text NOT NULL,
+  `cate_sort` int(11) NOT NULL,
+  `cate_display` int(11) NOT NULL,
+  PRIMARY KEY (`sub_sub_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table db_products_cate_sub_sub_sub
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `db_products_cate_sub_sub_sub`;
+
+CREATE TABLE `db_products_cate_sub_sub_sub` (
+  `sub_sub_sub_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `cate_id` int(11) NOT NULL,
+  `sub_id` int(11) NOT NULL,
+  `sub_sub_id` int(11) NOT NULL,
+  `cate_name` text NOT NULL,
+  `cate_slug` varchar(60) NOT NULL DEFAULT '',
+  `cate_stat` varchar(1) NOT NULL DEFAULT '',
+  `cate_contents` blob NOT NULL,
+  `cate_cover` text NOT NULL,
+  `cate_sort` int(11) NOT NULL,
+  `cate_display` int(11) NOT NULL,
+  PRIMARY KEY (`sub_sub_sub_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table db_services
 # ------------------------------------------------------------
 
@@ -280,23 +407,6 @@ CREATE TABLE `db_services` (
   `service_stat` varchar(1) NOT NULL,
   `service_style` int(11) NOT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table db_teachers
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `db_teachers`;
-
-CREATE TABLE `db_teachers` (
-  `teacher_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `teacher_name` text NOT NULL,
-  `teacher_stat` varchar(1) NOT NULL,
-  `teacher_experiences` varchar(11) NOT NULL DEFAULT '',
-  `teacher_desc` text NOT NULL,
-  `teacher_cover` text NOT NULL,
-  PRIMARY KEY (`teacher_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -365,6 +475,8 @@ CREATE TABLE `db_visitor_log` (
   `log_desc` text NOT NULL,
   `log_stat` varchar(1) NOT NULL,
   `log_unique` text NOT NULL,
+  `log_count` int(11) NOT NULL,
+  `log_day_count` int(11) NOT NULL,
   PRIMARY KEY (`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
