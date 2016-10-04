@@ -37,7 +37,7 @@ $conn_mysql_username_dev="root";
 $conn_mysql_password_dev="1234";
 $conn_mysql_database_dev="";
 
-$systemDemo="yes"; /* If website need demo site set to "yes" */
+$systemDemo=""; /* If website need demo site set to "yes" */
 
 /* Here you can put your Localhost/Development Enviroment endpoint, so can be isolated from live database. */
 $localhost_dev="";
@@ -49,7 +49,7 @@ require("define.php");
 Define to use localhost development database and is the web application use any database 
 Put 'yes' to enable, 'no' to disable.
 */
-$useLocalMySql="yes";$useDataTable="yes";
+$useLocalMySql="";$useDataTable="";
 $con="";
 if($useDataTable=="yes"){
 	if($useLocalMySql=="yes"){
