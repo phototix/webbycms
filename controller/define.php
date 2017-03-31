@@ -11,7 +11,7 @@ $page="";
 if(isset($_GET["page"])&&!empty($_GET["page"])){
 	$page=$_GET["page"];
 }
-if($page==""){
+if($page==""||$page=="index"){
 	$page="home";
 }
 $cate="";
