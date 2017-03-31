@@ -1,0 +1,34 @@
+{
+  "name": "phototix/webbycms",
+  "description": "Built since 2012 and support for different online and offline industry to supply a fast growing online contents and mangement.",
+  "keywords": [
+    "css",
+    "js",
+    "mobile-first",
+    "responsive",
+    "back-end-cms",
+    "front-end",
+    "bootstrap-v4-alpha",
+    "framework"
+  ],
+  "homepage": "http://www.webbypage.com",
+  "authors": [
+    {
+      "name": "Brandon Chong",
+      "email": "brandon@kkbuddy.com"
+    },
+    {
+      "name": "Reid Ng",
+      "email": "nlk710@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/phototix/webbycms/issues"
+  },
+  "license": "MIT",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3-standard"
+    }
+  }
+}
