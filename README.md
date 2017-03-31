@@ -1,4 +1,5 @@
 # webbycms - with Bootstrap 3 Stable
+This version of WebbyCMS PHP framework ready with bootstrap version 3.3.7 stable.
 
 1) Clone/Download, then select Bootraps4 branch to start develop your PHP project.
 
@@ -23,3 +24,8 @@ https://github.com/phototix/webbycms/tree/Bootstrap4/
 
 Foundation v6
 https://github.com/phototix/webbycms/tree/Foundations6/
+
+Credits:
+BootSnipp
+http://bootsnipp.com/
+
