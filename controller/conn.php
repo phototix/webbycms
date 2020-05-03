@@ -7,6 +7,7 @@ Description: This conn.php file contains not just mysql database connections,
 also you can configure all your views or pages connections.
 General Configurations of your web applications
 */
+define ('WEBBY_ROOT', dirname(dirname(__FILE__)));
 
 /* Live Database Connection */
 $conn_mysql_host="";
