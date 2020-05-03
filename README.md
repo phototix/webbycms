@@ -18,6 +18,9 @@ Recommened Tools:
 - MAMP Pro for local development
 - SequelPro (Mac OS), MYSQL WorkBench (Windows)
 
+Currently Compatible Environment is for AWS & its SDK.
+Use Elastic Beanstalk with PHP Environment will works just fine.
+
 #Others
 Bootstrap 4
 https://github.com/phototix/webbycms/tree/Bootstrap4/
