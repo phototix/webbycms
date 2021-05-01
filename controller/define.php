@@ -1,4 +1,11 @@
 <?php
+// Add Custom error handler function
+function customError($errno, $errstr, $errfile, $errline) {
+  echo '<div class="alert alert-danger"><p><b>Error:</b> ['.$errno.'] '.$errstr.' <br>at '.$errfile.': line-> '.$errline.'</div></p>';
+}
+// Return Error into function
+set_error_handler("customError");
+
 $row="";
 $systemError="";$systemSucces="";
 if(empty($_SESSION["systemError"])){
@@ -11,7 +18,7 @@ $page="";
 if(isset($_GET["page"])&&!empty($_GET["page"])){
 	$page=$_GET["page"];
 }
-if($page==""){
+if($page==""||$page=="index"){
 	$page="home";
 }
 $cate="";
