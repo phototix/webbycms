@@ -36,7 +36,7 @@
         <div class="col-lg-12">
             <h1>Welcome to Starway Travel!</h1>
             <p>Come travel with us.</p>
-            <img src= "http://webbypage.com/themes/version2/desktop/images/about_bg_2014.jpg" class="img-responsive img-rounded center-block" alt="World">
+            <img src= "https://s3-ap-southeast-1.amazonaws.com/misc-webby/panel-assets/02ebc67d76e30c75ba036ac11e7148ee.png" class="img-responsive img-rounded center-block" alt="World">
         </div>
     </div>
 
