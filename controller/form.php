@@ -31,7 +31,7 @@ if($formset=="ajax"){
 			include($systemForm);
 
 			if($newInsertID<>""){
-				?><script>window.location="<?=$currentURl?>";</script><?
+				?><script>window.location="<?=$currentURl?>";</script><?php
 			}
 			/* Error Message Delivery Function (Use Session) */
 			if($systemSucces<>""){
@@ -49,14 +49,14 @@ if($formset=="ajax"){
 				?><h1>Loading...</h1><?
 				if(($redirectURL==""||$redirectURL<>"")&&$redirectURL<>"noredirect"){
 					if($redirectURL==""){ $redirectURL="/"; }
-					?><script>window.location="<?=$redirectURL?>";</script><?
+					?><script>window.location="<?=$redirectURL?>";</script><?php
 				}elseif($redirectURL=="noredirect"){
 
 				}
 			}
 
 		}else{
-			?><script>window.location="?<?=$form?>&<?=$formset?>";</script><?
+			?><script>window.location="?<?=$form?>&<?=$formset?>";</script><?php
 		}
 	}
 }else{
@@ -66,7 +66,7 @@ if($formset=="ajax"){
 			include($systemForm);
 
 			if($newInsertID<>""){
-				?><script>window.location="<?=$currentURl?>";</script><?
+				?><script>window.location="<?=$currentURl?>";</script><?php
 			}
 			/* Error Message Delivery Function (Use Session) */
 			if($systemSucces<>""){
@@ -81,7 +81,7 @@ if($formset=="ajax"){
 			}
 
 		}else{
-			?><script>window.location="?<?=$form?>";</script><?
+			?><script>window.location="?<?=$form?>";</script><?php
 		}
 	}
 }
