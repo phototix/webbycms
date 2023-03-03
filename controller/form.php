@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SERVER['HTTP_HOST']) || (isset($_SERVER['SCRIPT_FILENAME'])) {
+	return;
+}
 $newInsertID="";$currentURl="http://".$_SERVER["HTTP_HOST"]."".$_SERVER["REQUEST_URI"];
 
 /* Ajax Form Handler */
