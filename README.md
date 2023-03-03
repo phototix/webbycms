@@ -1,11 +1,13 @@
 # webbycms - with Bootstrap 3 Stable
 This version of WebbyCMS PHP framework ready with bootstrap version 3.3.7 stable.
 
-1) Clone/Download, then select Bootraps4 branch to start develop your PHP project.
+1) Clone/Download, then select this branch to start develop your PHP project.
 
 2) Setup your MAMP Pro with localhost
+![](https://gallery.brandon.my/upload/2023/03/03/20230303113334-de20efc8.png)
 
 3) Access your localhost, you should see a Bootstrap Hello World Page
+![](https://gallery.brandon.my/i.php?/upload/2023/03/03/20230303113742-b35c60ee-la.png)
 
 4) Enjoy Coding!
 
