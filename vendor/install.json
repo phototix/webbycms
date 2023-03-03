@@ -1,0 +1,13 @@
+[{
+	"type": "EC2",
+	"size": "t2.micro",
+	"name": "Public Website"
+}, {
+	"type": "EC2",
+	"size": "t2.micro",
+	"name": "Public Minecraft Server"
+}, {
+	"type": "RDS",
+	"size": "t2.micro",
+	"name": "Public Database"
+}]

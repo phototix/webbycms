@@ -40,6 +40,7 @@
         <div class="col-lg-12">
             <h1>Welcome to Starway Travel!</h1>
             <p>Come travel with us.</p>
+            <p><?=initWebbyCMS()?></p>
             <img src= "https://s3-ap-southeast-1.amazonaws.com/misc-webby/panel-assets/02ebc67d76e30c75ba036ac11e7148ee.png" class="img-responsive img-rounded center-block" alt="World">
         </div>
     </div>
