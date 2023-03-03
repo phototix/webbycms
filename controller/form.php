@@ -46,7 +46,7 @@ if($formset=="ajax"){
 			}
 
 			if($showLoading==""){
-				?><h1>Loading...</h1><?
+				?><h1>Loading...</h1><?php
 				if(($redirectURL==""||$redirectURL<>"")&&$redirectURL<>"noredirect"){
 					if($redirectURL==""){ $redirectURL="/"; }
 					?><script>window.location="<?=$redirectURL?>";</script><?php
