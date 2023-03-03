@@ -1,3 +1,7 @@
+<?php
+// To show this page as a mock home page.
+// And PHP strings can be echo using <?=$string
+?>
 <header>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	    <div class="container">
