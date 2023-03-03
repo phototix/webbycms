@@ -26,7 +26,7 @@ Bootstrap 4
 https://github.com/phototix/webbycms/tree/Bootstrap4/
 
 Foundation v6
-https://github.com/phototix/webbycms/tree/Foundations6/
+- Temporaty stopped supports for Foundation
 
 Credits:
 BootSnipp
