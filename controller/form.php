@@ -29,7 +29,7 @@ if($formset=="ajax"){
 	require("functions.php");
 	require("common.php");
 	if($form<>""){
-	$systemForm="forms/".$form.".php";
+	$systemForm="pages/".$page."/forms/".$form.".php";
 		if(file_exists($systemForm)){
 			include($systemForm);
 
@@ -64,7 +64,7 @@ if($formset=="ajax"){
 	}
 }else{
 	if($form<>""){
-		$systemForm="controller/forms/".$form.".php";
+		$systemForm="pages/".$page."/forms/".$form.".php";
 		if(file_exists($systemForm)){
 			include($systemForm);
 
