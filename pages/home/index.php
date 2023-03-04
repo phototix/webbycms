@@ -47,6 +47,23 @@
 
     <div class="row">
         <div class="col-md-4">
+          <h2>Form Post handling sample</h2>
+          <!-- Basic form structure for webbycms, no action needed. post in method is mandate -->
+          <form method="post">
+          	<!-- First input hidden and name as form, value as the file in your 'forms' folder, check /pages/home/forms/sample.php -->
+          	<input type="hidden" name="form" value="sample">
+          	<label for="sample_input">
+          		<div>Test Send</div>
+          		<input type="text" class="form-control" name="send_something">
+          		<!-- When this button is click, the form contents will be post to the file in folder forms. -->
+          		<button class="btn btn-default">Submit</button>
+          	</label>
+          </form>
+      </div>
+    </div><!--/row-->
+
+    <div class="row">
+        <div class="col-md-4">
           <h2>Heading A</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
