@@ -23,6 +23,10 @@ Recommened Tools:
 Currently Compatible Environment is for AWS & its SDK.
 Use Elastic Beanstalk with PHP Environment will works just fine.
 
+### If you have any issue using this REPO to setup on your PHP environment ###
+1) Email to: brandon@kkbuddy.com
+2) Join Discord at: https://discord.gg/DgAVWjCE
+
 #Others
 
 Bootstrap 4
