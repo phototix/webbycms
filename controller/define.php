@@ -53,4 +53,44 @@ $Seconds=date("s");
 $Time=date("g:i A");
 
 $Token=md5($Today."webbycms".uniqid().$Time);
+
+/* Load Language */
+/* Additional Languages files will needed to work */
+$lang="";
+if(isset($_GET["lang"])&&!empty($_GET["lang"])){
+	$lang=$_GET["lang"];
+	$_SESSION["lang"]=$lang;
+}
+if(isset($_SESSION["lang"])&&!empty($_SESSION["lang"])){
+	$lang=$_SESSION["lang"];
+}
+if($lang==""){
+	$lang="en";
+}
+
+// Parse URL query to - Level 2 URL
+if($page<>""&&$cate<>""&&$action<>""&&$id<>""){
+	$str= str_replace("/".$page."/".$cate."/".$action."/".$id."?", "", $_SERVER["REQUEST_URI"]);
+	parse_str(str_replace("/".$page."/".$cate."/".$action."/".$id."/?", "", $str));
+}
+if($page<>""&&$cate<>""&&$action<>""&&$id==""){
+	$str= str_replace("/".$page."/".$cate."/".$action."?", "", $_SERVER["REQUEST_URI"]);
+	parse_str(str_replace("/".$page."/".$cate."/".$action."/?", "", $str));
+}
+if($page<>""&&$cate<>""&&$action==""&&$id==""){
+	$str= str_replace("/".$page."/".$cate."?", "", $_SERVER["REQUEST_URI"]);
+	parse_str(str_replace("/".$page."/".$cate."/?", "", $str));
+}
+if($page<>""&&$cate==""&&$action==""&&$id==""){
+	$str= str_replace("/".$page."?", "", $_SERVER["REQUEST_URI"]);
+	parse_str(str_replace("/".$page."/?", "", $str));
+}
+if($page==""&&$cate==""&&$action==""&&$id==""){
+	$str= str_replace("/?", "", $_SERVER["REQUEST_URI"]);
+	parse_str($str);
+}
+if($page=="home"&&$cate==""&&$action==""&&$id==""){
+	$str= str_replace("/?", "", $_SERVER["REQUEST_URI"]);
+	parse_str($str);
+}
 ?>
