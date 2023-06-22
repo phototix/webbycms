@@ -1,6 +1,6 @@
 <?php
 if($cate==""){ 
-	    include("404.php"); 
+	include("404.php"); 
 }else{
 	$pageFileSystem="pages/error/".$cate.".php";
 	if(file_exists($pageFileSystem)){
