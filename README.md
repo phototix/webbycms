@@ -12,7 +12,7 @@ This master copy only contains the PHP framework. If you needed the framework to
 https://github.com/phototix/webbycms/tree/Bootstrap4/
 
 2) Foundations 6
-https://github.com/phototix/webbycms/tree/Foundations6/
+[https://github.com/phototix/webbycms/tree/Foundations6/](https://github.com/brandonccy/webbycms/tree/Foundations6?tab=readme-ov-file)
 
 WebbyCMS is a standalone framework that capable to implement for any PHP project. WebbyCMS breaks to two parts. Front-end and Back-end.
 Front-end framework temporary called WebbyFrame(c). Back-end framework is currently close sourced. Still in consideration for open sources. Will try to provide a full documentation when I have the time.
