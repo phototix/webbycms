@@ -4,6 +4,13 @@ A lightweight PHP framework for building **simple, scalable and stable websites*
 Born in 2012 and modernized for PHP 8.1+, it keeps the friendly page-per-folder
 model while fixing the old codebase's security, concurrency and robustness gaps.
 
+## Live demo
+
+A hosted example of this repository runs at
+**[https://webbycms.brandon.my](https://webbycms.brandon.my)** — the same Bootstrap 5
+sample site you get from this repo, served from Apache behind a Cloudflare tunnel.
+See [HOSTING.md](HOSTING.md) for the full deployment steps.
+
 ## What's new in 2.0
 
 - **Modern PHP core** — PSR-4 namespaced kernel (`src/WebbyCMS/`), PHP 8.1+, Composer
