@@ -1,24 +1,21 @@
 <?php
+
+declare(strict_types=1);
+
 /*
-TItle: Incoming Hooks for Simple Header Injections
-Authoer: Brandon Chong
-Version: 1.0
-*/
+ * WebbyCMS 2.0 - REMOVED functionality.
+ *
+ * The old "login" module set a forgeable cookie (webbycms_login) with any
+ * value taken from the URL. That was not real authentication and has been
+ * removed for security reasons.
+ *
+ * Use the new auth API instead:
+ *
+ *   use WebbyCMS\Auth\AuthManager;
+ *   $auth->login($userId, ['roles' => ['admin']]);
+ *   $auth->check();   $auth->logout();
+ *
+ * Wire a WebbyCMS\Auth\UserProviderInterface to your own user store.
+ */
 
-$module="";
-if(isset($_GET["module"])&&!empty($_GET["module"])){
-	$module=$_GET["module"];
-}
-$data="";
-if(isset($_GET["data"])&&!empty($_GET["data"])){
-	$data=$_GET["data"];
-}
-
-/* Basic Login & Logout WebbyCMS Injection */
-if($module=="login"&&$data<>""){
-	setcookie("webbycms_login", $data ,time()+(86400 * 30) * 12, "/");
-}
-if($module=="logout"){
-	setcookie("webbycms_login", $data ,time()-(86400 * 30) * 12, "/");
-}
-?>
+require_once __DIR__ . '/legacy.php';

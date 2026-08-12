@@ -1,84 +1,80 @@
 <?php
-// To show this page as a mock home page.
-// And PHP strings can be echo using <?=$string
+/** @var \WebbyCMS\Request $request */
 ?>
 <header>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	    <div class="container">
-	        <div class="navbar-header">
-	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-	                <span class="sr-only">Toggle navigation</span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	            </button>
-	            <a class="navbar-brand" href="index.html">Starway Travel</a>
-	        </div>
-
-	        <!-- Collect the nav links, forms, and other content for toggling -->
-	        <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-	            <ul class="nav navbar-nav">
-	                <li><a href="index.html">Home</a>
-	                </li>                    
-	                <li><a href="#about">Desinations</a>
-	                </li>
-	                <li><a href="#services">Gallery</a>
-	                </li>
-	                <li><a href="#contact">Contact Us</a>
-	                </li>
-	            </ul>
-	        </div>
-	        <!-- /.navbar-collapse -->
-	    </div>
-	    <!-- /.container -->
-	</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Starway Travel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1>Welcome to Starway Travel!</h1>
-            <p>Come travel with us.</p>
-            <p><?=initWebbyCMS()?></p>
-            <img src= "https://s3-ap-southeast-1.amazonaws.com/misc-webby/panel-assets/02ebc67d76e30c75ba036ac11e7148ee.png" class="img-responsive img-rounded center-block" alt="World">
+<main class="container my-5">
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-3">
+            <h1 class="display-5 fw-bold">Welcome to Starway Travel!</h1>
+            <p class="col-md-8 fs-5">Come travel with us. <?= e(initWebbyCMS()) ?></p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row g-4" id="destinations">
         <div class="col-md-4">
-          <h2>Form Post handling sample</h2>
-          <!-- Basic form structure for webbycms, no action needed. post in method is mandate -->
-          <form method="post">
-          	<!-- First input hidden and name as form, value as the file in your 'forms' folder, check /pages/home/forms/sample.php -->
-          	<input type="hidden" name="form" value="sample">
-          	<label for="sample_input">
-          		<div>Test Send</div>
-          		<input type="text" class="form-control" name="send_something">
-          		<!-- When this button is click, the form contents will be post to the file in folder forms. -->
-          		<button class="btn btn-default">Submit</button>
-          	</label>
-          </form>
-      </div>
-    </div><!--/row-->
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title h5">Heading A</h2>
+                    <p class="card-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <a href="#" class="btn btn-primary">View details »</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title h5">Heading B</h2>
+                    <p class="card-text">Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <a href="#" class="btn btn-primary">View details »</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title h5">Heading C</h2>
+                    <p class="card-text">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <a href="#" class="btn btn-primary">View details »</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="row">
-        <div class="col-md-4">
-          <h2>Heading A</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!--/span-->
-
-        <div class="col-md-4">
-          <h2>Heading B</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!--/span-->
-
-        <div class="col-md-4">
-          <h2>Heading C</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!--/span-->
-    </div><!--/row-->
-</div>
+    <div class="row my-5" id="contact">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title h5">Form post handling sample</h2>
+                    <p class="text-muted">Submitting this form POSTs to <code>/pages/home/forms/sample.php</code> and redirects back here.</p>
+                    <form method="post">
+                        <input type="hidden" name="form" value="sample">
+                        <?= csrf_field() ?>
+                        <div class="mb-3">
+                            <label for="send_something" class="form-label">Your message</label>
+                            <input type="text" class="form-control" name="send_something" id="send_something" value="<?= e((string) $request->input('send_something', '')) ?>">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

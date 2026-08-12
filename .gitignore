@@ -1,0 +1,10 @@
+/vendor/
+/.env
+/.phpunit.cache/
+/.phpstan-cache/
+/phpunit.xml
+/phpstan.neon
+/storage/logs/*.log
+/storage/cache/*
+/storage/sessions/*
+.DS_Store

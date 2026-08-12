@@ -1,4 +1,9 @@
-RewriteEngine on
+RewriteEngine On
+
+# Serve existing files and directories directly (never route assets through PHP)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
 ErrorDocument 404 /index.php?page=error&cate=404
 ErrorDocument 500 /index.php?page=error&cate=500
 

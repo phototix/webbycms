@@ -1,26 +1,19 @@
 <?php
-session_start();
-/*
-TItle: WebbyCMS
-Authoer: Brandon Chong
-Version: 1.0
-*/
+
+declare(strict_types=1);
 
 /*
-Global settings
-*/
-?>
-<?php require_once('controller/conn.php'); ?>
-<?php require_once('controller/functions.php'); ?>
-<?php require_once('controller/common.php'); ?>
-<?php require_once('controller/form.php'); ?>
-<?php
-/*
-Below is all front related.
-To render and handle page info and form processing
-*/
-?>
-<?php require_once("includes/htmlstart.php"); ?>
-<?php require_once("includes/views.php"); ?>
-<?php require_once("includes/javascripts.php"); ?>
-<?php require_once("includes/htmlend.php"); ?>
+ * WebbyCMS 2.0 - Front Controller
+ *
+ * Every request is routed through this file. Apache (with the included
+ * .htaccess) rewrites /page/cate/action/id to this script.
+ */
+
+require __DIR__ . '/vendor/autoload.php';
+
+use WebbyCMS\Bootstrap;
+
+$app = Bootstrap::boot(__DIR__);
+
+$response = $app->handle($app->request());
+$response->send();

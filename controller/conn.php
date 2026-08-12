@@ -1,57 +1,32 @@
 <?php
+
+declare(strict_types=1);
+
 /*
-TItle: Database & Global Connection Handler
-Authoer: Brandon Chong
-Version: 3.0
-Description: This conn.php file contains not just mysql database connections, 
-also you can configure all your views or pages connections.
-General Configurations of your web applications
-*/
-define ('WEBBY_ROOT', dirname(dirname(__FILE__)));
+ * WebbyCMS 2.0 - Legacy shim for controller/conn.php (DEPRECATED).
+ *
+ * Database access is now handled by WebbyCMS\Db\Database (PDO) and configured
+ * through the .env file. This file exists only so old code that included it
+ * keeps working during migration.
+ */
 
-/* Live Database Connection */
-$conn_mysql_host="";
-$conn_mysql_username="";
-$conn_mysql_password="";
-$conn_mysql_database="";
-
-/* Development Database Connection */
-$conn_mysql_host_dev="localhost";
-$conn_mysql_username_dev="root";
-$conn_mysql_password_dev="1234";
-$conn_mysql_database_dev="";
-
-/* Here you can put your Localhost/Development Enviroment endpoint, so can be isolated from live database. */
-$localhost_dev="";
-
-/* Include PHP Variables and defines. */
-require("define.php");
-
-/* 
-Define to use localhost development database and is the web application use any database 
-Put 'yes' to enable, 'no' to disable.
-*/
-$useLocalMySql="yes";$useDataTable="no";
-
-if($useDataTable=="yes"){
-	if($useLocalMySql=="yes"){
-		if($_SERVER["HTTP_HOST"]==$localhost_dev){
-			$conn_mysql_host=$conn_mysql_host_dev;
-			$conn_mysql_username=$conn_mysql_username_dev;
-			$conn_mysql_password=$conn_mysql_password_dev;
-			$conn_mysql_database=$conn_mysql_database_dev;
-		}
-	}
-	if($conn_mysql_username==""||$conn_mysql_password==""||$conn_mysql_database==""){
-		die('Database Config Error!');
-	}else{
-		$con = mysqli_connect($conn_mysql_host, $conn_mysql_username , $conn_mysql_password, $conn_mysql_database);
-		if (!$con){
-			die('Could not connect: ' . mysql_error());
-		}
-	}
+if (!defined('WEBBY_ROOT')) {
+    define('WEBBY_ROOT', dirname(__DIR__));
 }
 
-/* Set your application timezone. */
+require_once __DIR__ . '/legacy.php';
+
+$GLOBALS['conn_mysql_host'] = (string) config('DB_HOST', '');
+$GLOBALS['conn_mysql_username'] = (string) config('DB_USER', '');
+$GLOBALS['conn_mysql_password'] = (string) config('DB_PASSWORD', '');
+$GLOBALS['conn_mysql_database'] = (string) config('DB_NAME', '');
+$GLOBALS['conn_mysql_host_dev'] = 'localhost';
+$GLOBALS['conn_mysql_username_dev'] = 'root';
+$GLOBALS['conn_mysql_password_dev'] = '';
+$GLOBALS['conn_mysql_database_dev'] = '';
+$GLOBALS['localhost_dev'] = '';
+$GLOBALS['useLocalMySql'] = 'yes';
+$GLOBALS['useDataTable'] = config('DB_ENABLED') ? 'yes' : 'no';
+
+/* Legacy timezone kept for compatibility; set APP_TIMEZONE via .env if needed. */
 date_default_timezone_set('Asia/Singapore');
-?>

@@ -1,8 +1,10 @@
 <?php
-// Here to put all JavaScripts to do client end related processing.
+/** @var string $strStartDate */
+$webbyStartDate = $strStartDate ?? '2012-12-31';
 ?>
 <script type="text/javascript">
-function doJSWebbyInit(){
-	var JSStartDate = '<?=$strStartDate?>';
-}
+window.webbycms = {
+    startDate: '<?= e($webbyStartDate) ?>',
+    baseUrl: '<?= e(url('/')) ?>'
+};
 </script>
